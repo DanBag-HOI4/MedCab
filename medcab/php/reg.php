@@ -1,3 +1,7 @@
+<?
+session_start();
+?>
+
 <!DOCTYPE html>
 <html class="bg-gray-800" lang="en">
 <head>
@@ -56,8 +60,21 @@
             <div class="flex flex-col">
 
                 <label for="" class="text-white">Введите пароль ещё раз</label>
-                <input type="text" name="password_confirm" id="" class="outline-none border-none rounded-lg">
+                <input type="password" name="password_confirm" id="" class="outline-none border-none rounded-lg">
 
+            </div>
+
+            <div class ="text-red-700">
+                <?if(isset($_SESSION["error"])) {
+                    ?>
+                    <p><?=$_SESSION["error"]?></p>
+                    <?
+                }?>
+                <?unset($_SESSION["error"]);?>
+            </div>
+
+            <div class ="text-white">
+                <span>Есть аккаунт? - <a href="./login.php">Войдите</a></span>
             </div>
 
             <button type="submit" class="bg-gray-800 rounded-lg text-white p-3 duration-300 hover:bg-gray-700">Отправить данные</button>

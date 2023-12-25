@@ -31,7 +31,7 @@ session_start();
                     <?
                     if(isset($_SESSION["user"])) {
                         ?>
-                        <a href="./php/cabinet.php">Личный кабинет</a>
+                        <a href="./php/reg.php">Личный кабинет</a>
                         <?
                     } else {
                         ?>
@@ -49,7 +49,7 @@ session_start();
         <main>
 
             <div class="main_container">
-
+                <a href="./logout.php">Выйти из аккаунта</a>
             </div>
 
         </main>
